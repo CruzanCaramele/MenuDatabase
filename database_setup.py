@@ -66,5 +66,6 @@ engine = create_engine(
 	'sqlite:///restaurantmenu.db')
 
 #goes into the database and adds our new tables
-#that will soon be added into the database
+#that will soon be added into the database. makes
+#the engine
 Base.metadata.create_all(engine)
