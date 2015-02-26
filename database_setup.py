@@ -43,7 +43,7 @@ class Restaurant(Base):
 class MenuItem(Base):
 	"""
 	class MenuItem corresponds to restaurant table
-	in the database.
+	
 
 	table representation for menu_item which
 	is in the database 		
