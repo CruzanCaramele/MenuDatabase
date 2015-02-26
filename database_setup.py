@@ -26,7 +26,7 @@ Base = declarative_base()
 class Restaurant(Base):
 	"""
 	class Restaurant corresponds to restaurant table
-	in the database.
+	in the database to be created.
 
 	table representation for restaurant which
 	is in the database 
