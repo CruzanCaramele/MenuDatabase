@@ -59,10 +59,10 @@ for item in items:
 
 3. UPDATE
 In order to update and existing entry in our database, we must execute the following commands:
--	Find Entry
--	Reset value(s)
--	Add to session
--	Execute session.commit()
+	Find Entry
+	Reset value(s)
+	Add to session
+	Execute session.commit()
 Find the veggie burger that belonged to the Urban Burger restaurant by executing the following query:
 veggieBurgers = session.query(MenuItem).filter_by(name= 'Veggie Burger')
 for veggieBurger in veggieBurgers:
@@ -79,9 +79,9 @@ session.commit()
 
 4. DELETE
 To delete an item from our database we must follow the following steps:
--	Find the entry
--	Session.delete(Entry)
--	Session.commit()
+	Find the entry
+	Session.delete(Entry)
+	Session.commit()
 Delete spinach Ice Cream from our Menu Items database with the following operations:
 spinach = session.query(MenuItem).filter_by(name = 'Spinach Ice Cream').one()
 session.delete(spinach)
