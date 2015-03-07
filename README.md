@@ -19,7 +19,7 @@ These operations are [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_a
 
 
 
-### Running the Tournament Results
+### Running the Database
 The aim for this is to run tournament_test.py file which contains unit tests that will test the functions within tournament.py file
 
 1. Launch the terminal program on your computer e.g git bash on Windows
@@ -39,55 +39,80 @@ The aim for this is to run tournament_test.py file which contains unit tests tha
 ### CRUD Operations Examples to perform on the database
 1. CREATE 
 New Restaurant and called it Pizza Palace:
+
 myFirstRestaurant = Restaurant(name = "Pizza Palace")
+
 session.add(myFirstRestaurant)
+
 sesssion.commit()
+
 New menu item and added it to the Pizza Palace Menu:
-cheesepizza = menuItem(name="Cheese Pizza", description = "Made with all natural ingredients and fresh mozzarella", course="Entree", price="$8.99", restaurant=myFirstRestaurant)
+
+cheesepizza = menuItem(name="Cheese Pizza", description = "Made with all natural ingredients and fresh mozzarella",
+
+course="Entree", price="$8.99", restaurant=myFirstRestaurant)
+
 session.add(cheesepizza)
+
 session.commit()
 
 2. READ
 Read out information in our database using the query method in SQLAlchemy:
+
 firstResult = sesson.query(Restaurant).first()
+
 firstResult.name
 
 items = session.query(MenuItem).all()
+
 for item in items:
     print item.name
 
 
 3. UPDATE
 In order to update and existing entry in our database, we must execute the following commands:
+
 	Find Entry
+	
 	Reset value(s)
+	
 	Add to session
+	
 	Execute session.commit()
+	
 Find the veggie burger that belonged to the Urban Burger restaurant by executing the following query:
+
 veggieBurgers = session.query(MenuItem).filter_by(name= 'Veggie Burger')
+
 for veggieBurger in veggieBurgers:
+
     print veggieBurger.id
+    
     print veggieBurger.price
+    
     print veggieBurger.restaurant.name
+    
     print "\n"
 Update the price of the veggie burger to $2.99:
+
 UrbanVeggieBurger = session.query(MenuItem).filter_by(id=8).one()
+
 UrbanVeggieBurger.price = '$2.99'
+
 session.add(UrbanVeggieBurger)
+
 session.commit() 
 
 
 4. DELETE
+5. 
 To delete an item from our database we must follow the following steps:
+
 	Find the entry
+	
 	Session.delete(Entry)
+	
 	Session.commit()
-Delete spinach Ice Cream from our Menu Items database with the following operations:
-spinach = session.query(MenuItem).filter_by(name = 'Spinach Ice Cream').one()
-session.delete(spinach)
-session.commit() 
-
-
 
 
 
